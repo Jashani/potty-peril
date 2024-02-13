@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyokok6rbgng0"]
+
+[ext_resource type="Texture2D" uid="uid://b7asgg7dqw74q" path="res://icon_evil.png" id="1_e15pg"]
+[ext_resource type="Script" path="res://characters/movement.gd" id="2_kse42"]
+[ext_resource type="Script" path="res://characters/random_movement.gd" id="3_10xt6"]
+[ext_resource type="Script" path="res://health.gd" id="4_enmes"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qij5a"]
+size = Vector2(80, 80)
+
+[node name="Enemy" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_e15pg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qij5a")
+
+[node name="Movement" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("2_kse42")
+actor = NodePath("")
+
+[node name="RandomMovement" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("3_10xt6")
+actor = NodePath("")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("4_enmes")

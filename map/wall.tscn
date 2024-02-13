@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5ust8uhcr8ot"]
 
-[ext_resource type="Texture2D" uid="uid://dmea0jrx0asjv" path="res://daark_green.png" id="1_kppvt"]
+[ext_resource type="Texture2D" uid="uid://dmea0jrx0asjv" path="res://map/daark_green.png" id="1_tyti4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x3sas"]
 size = Vector2(208, 208)
@@ -14,4 +14,4 @@ shape = SubResource("RectangleShape2D_x3sas")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.108, 0.192)
-texture = ExtResource("1_kppvt")
+texture = ExtResource("1_tyti4")

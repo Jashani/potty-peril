@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmea0jrx0asjv"
-path="res://.godot/imported/daark_green.png-07cb9e4caa623291aff900bc3776949c.ctex"
+path="res://.godot/imported/daark_green.png-d3f45ae6e4145203772b9f943682dc39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://daark_green.png"
-dest_files=["res://.godot/imported/daark_green.png-07cb9e4caa623291aff900bc3776949c.ctex"]
+source_file="res://map/daark_green.png"
+dest_files=["res://.godot/imported/daark_green.png-d3f45ae6e4145203772b9f943682dc39.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b7asgg7dqw74q" path="res://icon_evil.png" id="1_6b2bd"]
 [ext_resource type="Script" path="res://characters/movement.gd" id="2_evbfs"]
 [ext_resource type="Script" path="res://characters/random_movement.gd" id="3_p3sth"]
-[ext_resource type="Script" path="res://health.gd" id="4_sfe25"]
+[ext_resource type="PackedScene" uid="uid://b5gjiurouujd" path="res://health.tscn" id="4_nv5b3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qij5a"]
 size = Vector2(80, 80)
@@ -25,5 +25,4 @@ actor = NodePath("..")
 script = ExtResource("3_p3sth")
 actor = NodePath("..")
 
-[node name="Health" type="Node" parent="."]
-script = ExtResource("4_sfe25")
+[node name="Health" parent="." instance=ExtResource("4_nv5b3")]

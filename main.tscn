@@ -1,39 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://cubclbpbidg7w"]
+[gd_scene load_steps=4 format=3 uid="uid://cubclbpbidg7w"]
 
-[ext_resource type="Texture2D" uid="uid://dl4ll2qqf0de5" path="res://map/green.png" id="1_cbv10"]
 [ext_resource type="PackedScene" uid="uid://jv0u7vbvmfrq" path="res://characters/character.tscn" id="2_ygbsm"]
-[ext_resource type="PackedScene" uid="uid://c5ust8uhcr8ot" path="res://map/wall.tscn" id="3_q1qpr"]
+[ext_resource type="PackedScene" uid="uid://bcmckyaohbblc" path="res://room.tscn" id="3_nbass"]
 [ext_resource type="PackedScene" uid="uid://cyokok6rbgng0" path="res://characters/enemy.tscn" id="4_u33j6"]
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(577.5, 324.5)
-scale = Vector2(3.88333, 4.39333)
-texture = ExtResource("1_cbv10")
-
 [node name="Player" parent="." instance=ExtResource("2_ygbsm")]
 position = Vector2(278, 197)
 
-[node name="Wall" parent="." instance=ExtResource("3_q1qpr")]
-position = Vector2(-37, 328)
-scale = Vector2(1.086, 3.52)
-
-[node name="Wall2" parent="." instance=ExtResource("3_q1qpr")]
-position = Vector2(1184, 328)
-scale = Vector2(1.086, 3.52)
-
-[node name="Wall3" parent="." instance=ExtResource("3_q1qpr")]
-position = Vector2(565, 670)
-rotation = 1.5708
-scale = Vector2(1.086, 5.585)
-
-[node name="Wall4" parent="." instance=ExtResource("3_q1qpr")]
-position = Vector2(565, -79)
-rotation = 1.5708
-scale = Vector2(1.086, 5.585)
-
 [node name="Enemy" parent="." instance=ExtResource("4_u33j6")]
 position = Vector2(556, 303)
+
+[node name="Room" parent="." instance=ExtResource("3_nbass")]
+position = Vector2(572, 310)

@@ -8,7 +8,7 @@ extends Node2D
 
 
 func _input(event: InputEvent):
-	if Input.is_action_just_pressed("action"):
+	if Input.is_action_just_pressed("attack"):
 		print("Whack!")
 		_whack()
 

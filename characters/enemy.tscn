@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b7asgg7dqw74q" path="res://icon_evil.png" id="1_6b2bd"]
 [ext_resource type="Script" path="res://characters/movement.gd" id="2_evbfs"]
-[ext_resource type="Script" path="res://characters/random_movement.gd" id="3_p3sth"]
+[ext_resource type="PackedScene" uid="uid://bg3ha5qwdxoyh" path="res://characters/enemy_movement.tscn" id="3_m4nld"]
 [ext_resource type="PackedScene" uid="uid://b5gjiurouujd" path="res://health.tscn" id="4_nv5b3"]
 [ext_resource type="PackedScene" uid="uid://bfl2bdla5vtfr" path="res://characters/monster_death_particles.tscn" id="5_xv8ek"]
 
@@ -10,6 +10,7 @@
 size = Vector2(80, 80)
 
 [node name="Enemy" type="CharacterBody2D"]
+z_index = 2
 y_sort_enabled = true
 collision_layer = 4
 motion_mode = 1
@@ -27,9 +28,9 @@ shape = SubResource("RectangleShape2D_qij5a")
 script = ExtResource("2_evbfs")
 actor = NodePath("..")
 
-[node name="RandomMovement" type="Node" parent="." node_paths=PackedStringArray("actor")]
-script = ExtResource("3_p3sth")
+[node name="EnemyMovement" parent="." node_paths=PackedStringArray("actor") instance=ExtResource("3_m4nld")]
 actor = NodePath("..")
+seconds_to_switch_direction = 0.1
 
 [node name="Health" parent="." instance=ExtResource("4_nv5b3")]
 max_health = 20.0

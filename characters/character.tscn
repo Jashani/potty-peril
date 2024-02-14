@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://jv0u7vbvmfrq"]
+[gd_scene load_steps=10 format=3 uid="uid://jv0u7vbvmfrq"]
 
 [ext_resource type="Script" path="res://characters/movement.gd" id="2_0q5sf"]
 [ext_resource type="Texture2D" uid="uid://cq410eg6xlu1y" path="res://icon.svg" id="2_nhloi"]
@@ -6,11 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://brhbk3crglgc8" path="res://items/weapon.tscn" id="4_g7sln"]
 [ext_resource type="PackedScene" uid="uid://b5gjiurouujd" path="res://health.tscn" id="5_2cjg0"]
 [ext_resource type="PackedScene" uid="uid://bfl2bdla5vtfr" path="res://characters/monster_death_particles.tscn" id="6_rdel4"]
+[ext_resource type="Script" path="res://characters/interaction_area.gd" id="7_7xdt4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5me1"]
 size = Vector2(19, 19)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_304q1"]
+radius = 12.5
+
 [node name="Player" type="CharacterBody2D"]
+z_index = 2
 y_sort_enabled = true
 scale = Vector2(2, 2)
 collision_layer = 2
@@ -38,3 +43,10 @@ position = Vector2(0, -9.9)
 
 [node name="Health" parent="." instance=ExtResource("5_2cjg0")]
 death_particles = ExtResource("6_rdel4")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+script = ExtResource("7_7xdt4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, -9.5)
+shape = SubResource("CircleShape2D_304q1")

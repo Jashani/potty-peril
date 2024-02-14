@@ -47,7 +47,7 @@ _data = {
 }
 
 [node name="Weapon" type="Node2D" node_paths=PackedStringArray("animation_controller", "weapon_area")]
-z_index = 1
+z_index = 3
 script = ExtResource("1_quhjw")
 animation_controller = NodePath("AnimationPlayer")
 weapon_area = NodePath("WeaponArea")

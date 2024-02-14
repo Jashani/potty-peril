@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bg3ha5qwdxoyh"]
+
+[ext_resource type="Script" path="res://characters/enemy_movement.gd" id="1_kltf1"]
+
+[node name="EnemyMovement" type="Node" node_paths=PackedStringArray("actor")]
+script = ExtResource("1_kltf1")
+actor = NodePath("")

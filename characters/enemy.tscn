@@ -1,20 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyokok6rbgng0"]
+[gd_scene load_steps=7 format=3 uid="uid://cyokok6rbgng0"]
 
 [ext_resource type="Texture2D" uid="uid://b7asgg7dqw74q" path="res://icon_evil.png" id="1_6b2bd"]
 [ext_resource type="Script" path="res://characters/movement.gd" id="2_evbfs"]
 [ext_resource type="Script" path="res://characters/random_movement.gd" id="3_p3sth"]
 [ext_resource type="PackedScene" uid="uid://b5gjiurouujd" path="res://health.tscn" id="4_nv5b3"]
+[ext_resource type="PackedScene" uid="uid://bfl2bdla5vtfr" path="res://characters/monster_death_particles.tscn" id="5_xv8ek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qij5a"]
 size = Vector2(80, 80)
 
 [node name="Enemy" type="CharacterBody2D"]
+y_sort_enabled = true
+collision_layer = 4
+motion_mode = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -40.025)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("1_6b2bd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -40.025)
 shape = SubResource("RectangleShape2D_qij5a")
 
 [node name="Movement" type="Node" parent="." node_paths=PackedStringArray("actor")]
@@ -26,3 +32,5 @@ script = ExtResource("3_p3sth")
 actor = NodePath("..")
 
 [node name="Health" parent="." instance=ExtResource("4_nv5b3")]
+max_health = 20.0
+death_particles = ExtResource("5_xv8ek")

@@ -2,10 +2,14 @@ extends Node2D
 
 
 @export var animation_controller: AnimationPlayer
+@export var weapon_area: Area2D
+
+@export var damage: float = 5.0
 
 
 func _input(event: InputEvent):
 	if Input.is_action_just_pressed("action"):
+		print("Whack!")
 		_whack()
 
 
@@ -22,3 +26,8 @@ func _process(delta):
 
 func _whack():
 	animation_controller.play("whack")
+	var bodies_hit = weapon_area.get_overlapping_bodies()
+	for body in bodies_hit:
+		if body.name == 'Enemy':
+			var enemy_health = body.find_child("Health")
+			enemy_health.damage(damage)
